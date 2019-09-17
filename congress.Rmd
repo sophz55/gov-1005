@@ -1,0 +1,27 @@
+---
+title: "class-09-12"
+author: "Sophia Zheng"
+date: "9/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(knitr)
+library(fivethirtyeight)
+```
+
+
+```{r}
+congress_age %>%
+  filter(party %in% c("D", "R")) %>%
+  mutate(year = format(termstart, "%Y")) %>%
+  group_by(year, party) %>%
+  summarize(meanAge = mean(age)) %>%
+  ggplot(aes(x = year, y = meanAge, group = party, color = party)) + 
+    geom_line() + 
+    scale_x_continuous(breaks = seq(1950, 2010, by = 10)) +
+    labs(title = "Average Age of Members in Congress", subtitle = "At start of term, 1947-2013")
+```
+
