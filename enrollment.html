@@ -184,23 +184,504 @@ summary {
 </div>
 
 
-<pre><code>## # A tibble: 2,813 x 14
-##    `Course ID` `Course Title` `Course Name` `Course Section…
-##    &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;           
-##  1 123591      AFRAMER 11     Introduction… 001             
-##  2 156935      AFRAMER 116    Autobiograph… 01              
-##  3 207805      AFRAMER 131Y   Black Womens… 1               
-##  4 213440      AFRAMER 171X   African Art … 1               
-##  5 123438      AFRAMER 187    African Reli… 001             
-##  6 213434      AFRAMER 196    Introduction… 1               
-##  7 213435      AFRAMER 196X   Literature, … 1               
-##  8 123435      AFRAMER 197    Poverty, Rac… 01              
-##  9 211170      AFRAMER 197X   Critiquing B… 1               
-## 10 213441      AFRAMER 197Y   The African … 1               
-## # … with 2,803 more rows, and 10 more variables: `Course
-## #   Department` &lt;chr&gt;, `Instructor Full Name` &lt;chr&gt;, UGrad &lt;dbl&gt;,
-## #   Grad &lt;dbl&gt;, NonDegree &lt;dbl&gt;, XReg &lt;dbl&gt;, VUS &lt;dbl&gt;, Employee &lt;dbl&gt;,
-## #   Withdraw &lt;dbl&gt;, Total &lt;dbl&gt;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Course Title</th>
+<th align="left">Course Name</th>
+<th align="left">Instructor Full Name</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ENGLISH 185E</td>
+<td align="left">The Essay: History &amp; Practice</td>
+<td align="left">Wood,James</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 170A</td>
+<td align="left">High and Low in Postwar Americ</td>
+<td align="left">Menand,Louis</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 99R</td>
+<td align="left">Tutorial - Senior Year</td>
+<td align="left">Burt,Stephanie</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 162BB</td>
+<td align="left">Broadway Bodies</td>
+<td align="left">Miller,Derek</td>
+<td align="right">38</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 165</td>
+<td align="left">Proust, Joyce, Woolf</td>
+<td align="left">Fisher,Philip</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 182</td>
+<td align="left">Science Fiction</td>
+<td align="left">Burt,Stephanie</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 121CG</td>
+<td align="left">After Hamlet</td>
+<td align="left">Teskey,Gordon</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 41</td>
+<td align="left">Arrivals: 700-1700</td>
+<td align="left">Simpson,James</td>
+<td align="right">27</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 55</td>
+<td align="left">Poets: Lyric Poetry</td>
+<td align="left">Sacks,Peter</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 52</td>
+<td align="left">Poets: Poetry and Everything</td>
+<td align="left">Spaide,Christopher Addison</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 102J</td>
+<td align="left">Introduction to Old English</td>
+<td align="left">Donoghue,Daniel G.</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 172LD</td>
+<td align="left">The Literature of Displacement</td>
+<td align="left">McCarthy,Jesse</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 181A</td>
+<td align="left">Intro to Asian American Lit</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 90PP</td>
+<td align="left">Plotting the Passions</td>
+<td align="left">Wiet,Victoria</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 62</td>
+<td align="left">Migrations</td>
+<td align="left">Stauffer,John</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 90EW</td>
+<td align="left">The Empire Writes Back</td>
+<td align="left">White,Duncan E.</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 90QP</td>
+<td align="left">20th-Century American Poetry</td>
+<td align="left">Sacks,Peter</td>
+<td align="right">15</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 289M</td>
+<td align="left">Who Cares about Modernism?</td>
+<td align="left">Blum,Beth</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 90CB</td>
+<td align="left">Chekhov/Beckett</td>
+<td align="left">Phillips,Elizabeth McKinney</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 125LP</td>
+<td align="left">English Lyric Poetry</td>
+<td align="left">Teskey,Gordon</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 90CL</td>
+<td align="left">Comic Imagination</td>
+<td align="left">Donoghue,Daniel G.</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CAFR</td>
+<td align="left">Advanced Fiction Workshop</td>
+<td align="left">Messud,Claire</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CBBR</td>
+<td align="left">Intermediate Poetry: Workshop</td>
+<td align="left">Bell,Joshua David</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CBF</td>
+<td align="left">Breaking Form: Workshop</td>
+<td align="left">Cole,Teju</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CBF</td>
+<td align="left">Breaking Form: Workshop</td>
+<td align="left">Cole,Teju</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CEI</td>
+<td align="left">The Immigrant and the Exile</td>
+<td align="left">Yoon,Paul</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CHCR</td>
+<td align="left">Advanced Poetry: Workshop</td>
+<td align="left">Bell,Joshua David</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CHW</td>
+<td align="left">Haunted: Writing the Supernat</td>
+<td align="left">van den Berg,Laura M.</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CIHR</td>
+<td align="left">The I’s Have It: Personal Essy</td>
+<td align="left">Pollan,Michael Kevin</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CLR</td>
+<td align="left">Introduction to Screenwriting</td>
+<td align="left">Syeed,Musa</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CLR</td>
+<td align="left">Introduction to Screenwriting</td>
+<td align="left">Syeed,Musa</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CNSR</td>
+<td align="left">Narrative Science Journalism</td>
+<td align="left">Pollan,Michael Kevin</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CPY</td>
+<td align="left">Fiction Writing: Workshop</td>
+<td align="left">Yoon,Paul</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CTV</td>
+<td align="left">Writing TV: Developing Pilot</td>
+<td align="left">Marks,Sam</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CVB</td>
+<td align="left">Fiction Writing: Workshop</td>
+<td align="left">van den Berg,Laura M.</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CAP</td>
+<td align="left">The Art of the Personal Essay</td>
+<td align="left">Frey,Darcy</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH CFMR</td>
+<td align="left">Introductory Fiction Workshop</td>
+<td align="left">Messud,Claire</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 397</td>
+<td align="left">Directed Study</td>
+<td align="left">Stauffer,John</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 45</td>
+<td align="left">Arrivals: British Lit 700-1700</td>
+<td align="left">Wilson,Anna</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH CKR</td>
+<td align="left">Intro to Playwriting: Workshop</td>
+<td align="left">Marks,Sam</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 239</td>
+<td align="left">English Lit in the Continental</td>
+<td align="left">Whittington,Leah Jane</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 90AP</td>
+<td align="left">Race, Identity, and American P</td>
+<td align="left">Spaide,Christopher Addison</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 146ET</td>
+<td align="left">An Enlightenment for Today?</td>
+<td align="left">Engell,James</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 256CR</td>
+<td align="left">Comparative Romanticism</td>
+<td align="left">Engell,James</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 304HF</td>
+<td align="left">Long Eighteenth Century</td>
+<td align="left">Engell,James</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 350</td>
+<td align="left">Teaching Colloquium</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Claybaugh,Amanda</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Lynch,Deidre</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 282A</td>
+<td align="left">Ethnic Studies: Past, Present,</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 300HF</td>
+<td align="left">Medieval Colloquium</td>
+<td align="left">Simpson,James</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Burt,Stephanie</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 90MK</td>
+<td align="left">Medieval Women &amp; Knowledge</td>
+<td align="left">Watson,Nicholas James</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 202S</td>
+<td align="left">Saints’ Lives</td>
+<td align="left">Donoghue,Daniel G.</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 282PH</td>
+<td align="left">Public Humanities Practicum</td>
+<td align="left">New,Elisa</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Greenblatt,Stephen</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Scarry,Elaine</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Watson,Nicholas James</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 302HF</td>
+<td align="left">Renaissance Colloquium</td>
+<td align="left">Garber,Marjorie</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 306HF</td>
+<td align="left">Long 19th C. &amp; Modernism</td>
+<td align="left">Blum,Beth</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 310HFR</td>
+<td align="left">20th C. &amp; Contemporary Lit.</td>
+<td align="left">Rich,Kelly Mee</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 370</td>
+<td align="left">Placement Seminar</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Stauffer,John</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 98R</td>
+<td align="left">Tutorial - Junior Year</td>
+<td align="left">Ocheltree,Matthew Neal</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 308HF</td>
+<td align="left">Theatre and Performance</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 312HF</td>
+<td align="left">Race and Ethnicity Colloquium</td>
+<td align="left">Carpio,Glenda</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 397</td>
+<td align="left">Directed Study</td>
+<td align="left">Burt,Stephanie</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 397</td>
+<td align="left">Directed Study</td>
+<td align="left">Greenblatt,Stephen</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Carpio,Glenda</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Gates Jr,Henry Louis</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 398</td>
+<td align="left">Doctoral Dissertation</td>
+<td align="left">Teskey,Gordon</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 399</td>
+<td align="left">Reading and Research</td>
+<td align="left">Kim,Ju Yon</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 399</td>
+<td align="left">Reading and Research</td>
+<td align="left">McCarthy,Jesse</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 399</td>
+<td align="left">Reading and Research</td>
+<td align="left">Watson,Nicholas James</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">ENGLISH 90BN</td>
+<td align="left">Black New England</td>
+<td align="left">Dichter,Thomas Alan</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLISH 91R</td>
+<td align="left">Supervised Reading and Researc</td>
+<td align="left">Burt,Stephanie</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
 
 
 

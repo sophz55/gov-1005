@@ -9,10 +9,16 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readxl)
+library(knitr)
 ```
 
 ```{r}
-enrollment_data <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3)
-enrollment_data
+enrollment_data <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3) 
+enrollment_data %>%
+  filter(`Course Department` == "English") %>%
+  arrange(desc(Total)) %>%
+  select('Course Title', 'Course Name', 'Instructor Full Name', Total) %>%
+  kable()
 ```
+
 
