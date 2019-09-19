@@ -12,7 +12,7 @@ library(readxl)
 ```
 
 ```{r}
-enrollment_data <- read_xlsx("class_enrollment_summary_by_term_9.17.19.xlsx")
+enrollment_data <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3)
 enrollment_data
 ```
 
