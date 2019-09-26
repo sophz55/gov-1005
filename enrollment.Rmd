@@ -9,16 +9,18 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readxl)
+library(janitor)
 library(knitr)
 ```
 
 ```{r}
-enrollment_data <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.24.19.xlsx", skip = 3) 
-enrollment_data %>%
-  filter(`Course Department` == "Government") %>%
-  arrange(desc(Total)) %>%
-  select('Course Title', 'Course Name', 'Instructor Full Name', Total) %>%
-  top_n(5) %>%
+data_9_24 <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.24.19.xlsx", skip = 3) %>% clean_names()
+data_9_17 <- read_xlsx("raw-data/class_enrollment_summary_by_term_9.17.19.xlsx", skip = 3) %>% clean_names()
+comparison <- left_join(data_9_17, data_9_24, by = "course_id", suffix = c(".17", ".24")) %>% 
+  mutate(drops = u_grad.17 - u_grad.24) %>% 
+  arrange(desc(drops)) %>% 
+  select(course_name.24, u_grad.24, u_grad.17, drops)
+comparison %>%
   kable()
 ```
 

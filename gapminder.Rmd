@@ -1,0 +1,12 @@
+---
+title: "Gapminder"
+author: "Sophia Zheng"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gapminder)
+library(tidyverse)
+```
