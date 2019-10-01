@@ -8,18 +8,25 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(gapminder)
+library(gganimate)
 library(tidyverse)
 ```
 
 
 ```{r}
-data_1962 <- gapminder %>% 
-  filter(year == 1962, continent %in% c("Africa", "Americas", "Asia")) 
+continent_levels <- c("Americas", "Africa", "Asia", "Europe", "Oceania")
+gapminder$continent <- gapminder$continent %>% factor(levels = continent_levels)
 
-ggplot(data_1962, aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
-  labs(x = "GDP Per Capita", y = "Life Expectancy", title = "The World Gets Better Every Year") +
-  geom_point(alpha = .5) +
-  scale_x_log10(labels = c("$1,000", "$10,000"), breaks = c(1000, 10000)) +
-  facet_wrap(~ continent)
+gapminder %>% 
+  filter(continent %in% c("Americas", "Africa", "Asia")) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = country, alpha = 0.7)) + 
+    geom_point(show.legend = FALSE) +
+    scale_x_log10(labels = c("$1,000", "$10,000"), breaks = c(1000, 10000)) +
+    facet_wrap(~ continent) +
+    scale_color_manual(values = country_colors) +
+    labs(title = "The World Gets Better Every Year",
+         x = "GDP Per Capita",
+         y = "Life Expectancy") +
+    transition_time(year)
 ```
 
