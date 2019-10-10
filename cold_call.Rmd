@@ -1,0 +1,27 @@
+---
+title: "Cold Call"
+author: "Sophia Zheng"
+date: "10/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(googlesheets4)
+library(tidyverse)
+```
+
+
+```{r}
+my_cold_call <- function() {
+  sheets_deauth()
+  x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg") %>% 
+    select(Student) %>% 
+    sample_n(1) %>% 
+    pull(Student)
+    return(x)
+}
+
+print(my_cold_call())
+```
+

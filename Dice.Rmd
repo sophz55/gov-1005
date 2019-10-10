@@ -1,0 +1,31 @@
+---
+title: "Dice"
+author: "Sophia Zheng"
+date: "10/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+
+```{r}
+dice <- function() {
+  sample(1:6, 1)
+}
+
+roll_dice <- function(n) {
+  results <- vector(mode = "integer", length = n)
+  for (i in 1:n) {
+    results[i] <- dice() + dice()
+  }
+  return (results)
+}
+
+x <- tibble(rolls = roll_dice(10000))
+ggplot(x, aes(x = rolls)) + 
+  geom_histogram(bins = 50, binwidth = 1, color = "white")
+```
+
