@@ -1,0 +1,39 @@
+---
+title: "Cookies"
+author: "Sophia Zheng"
+date: "10/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(janitor)
+library(tidyverse)
+```
+
+```{r}
+create_sampler <- function(n) {
+  return (tibble(replicate = 1:n) %>% 
+    mutate(which_bowl = sample(c("Bowl 1", "Bowl 2"), size = n, replace = TRUE)) %>% 
+    mutate(cookie = ifelse (
+      which_bowl == "Bowl 1", 
+      sample(c("vanilla", "chocolate"), size = n, replace = TRUE, prob = c(0.75, 0.25)),
+      sample(c("vanilla", "chocolate"), size = n, replace = TRUE, prob = c(0.5, 0.5))
+    )))
+}
+
+run_trial <- function(n) {
+  sampler <- create_sampler(100000) %>% 
+    filter(cookie == "vanilla") %>% 
+    count(which_bowl)
+  
+  count_1 <- sampler %>% filter(which_bowl == "Bowl 1") %>% pull(n)
+  count_2 <- sampler %>% filter(which_bowl == "Bowl 2") %>% pull(n)
+  return(count_1 / (count_1 + count_2))
+}
+
+create_sampler(100000) %>% 
+  tabyl(which_bowl, cookie) %>% 
+  adorn_percentages(denominator = "col") %>% 
+  adorn_pct_formatting()
+```
