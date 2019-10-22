@@ -14,16 +14,13 @@ library(tidyverse)
 download.file("https://docs.google.com/spreadsheets/d/e/2PACX-1vSaerGnn1tDQfgiyJRl7jnn1Au7Ev6Qt7BwMpl53ZgzAyMnANQfog9y4es4ZExlX5tjEgl0mPIyTGcP/pub?gid=480043959&single=true&output=csv", destfile = "raw-data/trains.csv")
 trains <- read_csv("raw-data/trains.csv", 
                    col_names = TRUE,
-                   cols(
-                     male = col_double(),
-                     republican = col_double(),
-                     white = col_double(),
-                     income = col_double(),
-                     treatment = col_double(),
-                     attitude = col_double()))
-
+                   col_types = cols(male = col_int(),
+                                    republican = col_int(),
+                                    white = col_int(),
+                                    income = col_double(),
+                                    treatment = col_int(),
+                                    attitude = col_double()))
 trains
-
 trains %>% 
   group_by(treatment) %>% 
   summarize(meanAttitude = mean(attitude))
