@@ -1,0 +1,36 @@
+---
+title: "Arrests"
+author: "Sophia Zheng"
+date: "10/24/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(sf)
+library(fs)
+library(tidyverse)
+```
+
+```{r}
+dir_create("arrest_data")
+download.file("https://stacks.stanford.edu/file/druid:hp256wp2687/hp256wp2687_ct_hartford_2019_08_13.rds", destfile = "arrest_data/hartford.rds")
+download.file("https://stacks.stanford.edu/file/druid:hp256wp2687/hp256wp2687_ct_hartford_shapefiles_2019_08_13.tgz", destfile = "arrest_data/shapes.hartford.tgz")
+untar("arrest_data/shapes.hartford.tgz")
+
+hartford <- read_rds("arrest_data/hartford.rds")
+shape <- st_read("ct_hartford_shapefiles/hartford_neighborhoods.shp")
+dir_delete("arrest_data")
+dir_delete("ct_hartford_shapefiles")
+
+officer <- hartford %>%
+  filter(officer_id_hash == "09739d95d7", arrest_made) %>%
+  drop_na(lat, lng)
+
+arrest_points <- st_as_sf(officer, coords = c("lng", "lat"), crs = 4326)
+
+ggplot(shape) +
+  geom_sf(data = shape) +
+  geom_sf(data = arrest_points)
+```
+
