@@ -1,0 +1,33 @@
+---
+title: "Trains"
+author: "Sophia Zheng"
+date: "10/31/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+```{r}
+x <- read_csv("train.csv",
+              col_types = cols(
+                            treatment = col_double(),
+                            att_start = col_double(),
+                            att_end = col_double(),
+                            att_chg = col_double(),
+                            income = col_double(),
+                            liberal = col_double(),
+                            republican = col_double(),
+                            age = col_double(),
+                            male = col_double(),
+                            treatment.2 = col_character()
+                          ))
+
+x %>% 
+  ggplot(aes(republican, att_start)) + 
+  geom_smooth(method = "lm") + 
+  geom_jitter(width = 0.1)
+```
+
