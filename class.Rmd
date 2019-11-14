@@ -1,0 +1,41 @@
+---
+title: 'Class'
+author: "Sophia Zheng"
+date: "11/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(infer)
+library(moderndive)
+library(tidyverse)
+```
+
+```{r}
+lm.obj <- lm(formula = score ~ age + gender, data = evals)
+get_regression_table(lm.obj)
+
+score_distribution <- evals %>%
+  rep_sample_n(size = 463, replace = TRUE, reps = 10000) %>%
+  group_by(replicate) %>%
+  summarize(mean_score = mean(score)) %>%
+  summarize(lower = quantile(mean_score, .025),
+            middle = quantile(mean_score, .5),
+            upper = quantile(mean_score, .975))
+
+age_distribution <- evals %>% 
+  rep_sample_n(size = 463, replace = TRUE, reps = 10000) %>% 
+  group_by(replicate) %>% 
+  nest() %>% 
+  mutate(results = map(data, ~ lm(score ~ age + gender, data = .x)),
+         coefficients = map(results, ~ coef(.x)),
+         age_coef = map(coefficients, ~ pluck(.x, "age"))) %>% 
+  unnest(age_coef) %>% 
+  ungroup() %>% 
+  summarize(lower = quantile(age_coef, .025),
+            middle = quantile(age_coef, .5),
+            upper = quantile(age_coef, .975))
+age_distribution
+```
+
